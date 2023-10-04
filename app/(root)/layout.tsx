@@ -40,9 +40,7 @@ export default function RootLayout({
 
             <Rightsidebar />
           </main>
-          <Bottombar />
-          {children}
-          
+          <Bottombar />        
         </body>
       </html>
     </ClerkProvider>

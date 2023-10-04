@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
 import { formatDateString } from '@/lib/utils';
+import DeleteThread from '../forms/DeleteThread';
 
 interface Props {
     id : string,
@@ -79,12 +80,19 @@ const ThreadCard = ({
                     </div>
                 </div>
             </div>
+            <DeleteThread 
+                threadId={JSON.stringify(id)}
+                currentUserId={currentUserId}
+                authorId={author.id}
+                parentId={parentId}
+                isComment={isComment}
+            />
         </div>
             {/* Timestamp Thread */}
             {!isComment && community && (
                 <Link href={`/communities/${community.id}`} className='mt-5 flex items-center'>
                     <p className='text-subtle-medium text-gray-1'>
-                        {formatDateString(createdAt)} - {community && `- ${community.name} Community`} 
+                        {formatDateString(createdAt)} {community && `- ${community.name} Community`} 
                     </p>
                     <Image 
                         src={community.image}

@@ -48,6 +48,7 @@ async function Page({params}: {params: {id: string}}) {
                                     {userInfo?.threads?.length}
                                 </p>
                             )}
+                           
                         </TabsTrigger>
                     ))}
                 </TabsList>
@@ -58,9 +59,10 @@ async function Page({params}: {params: {id: string}}) {
                            currentUserId={user.id}
                            accountId={userInfo.id}
                            accountType="User" 
-                        />
+                        />                       
                     </TabsContent>
                 ))}
+        
             </Tabs>
         </div>
     </section>
